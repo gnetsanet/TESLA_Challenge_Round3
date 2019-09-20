@@ -1,0 +1,11 @@
+aws {
+  accessKey = 'XXXXXXXXXXXXXXXX'
+  secretKey = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+  region = 'us-east-1'
+}
+process {
+  executor = 'awsbatch'
+  queue = 'nf-generic-job-queue-user'
+  container = 'job-definition://cram2fastq'
+}
+executor.awscli="/root/.local/bin/aws"
